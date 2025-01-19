@@ -1,8 +1,8 @@
 pipeline {
     agent any
     parameters {
-      string(name: 'Dockerhub_secret', defaultValue: 'dockerhub', description: 'Jenkins secret name for auth into dockerhub')
-
+      string(name: 'Dockerhub_secret', defaultValue: 'dockerhub', description: 'Jenkins secret name for auth into dockerhub'),
+      string(name: 'Tag_docker_image', defaultValue: 'max0x15/mood2anime', description: 'Tag for pushing image'),
     }
 	stages {
 		stage('Build') {
@@ -11,7 +11,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: "${params.Dockerhub_secret}", usernameVariable : 'username_dockerhub', passwordVariable: 'password_dockerhub' )]) {
                       sh 'docker login -u $username_dockerhub --password $password_dockerhub'
                 }
-                sh "docker buildx build -t max0x15/mood2anime . --push"
+                sh "docker buildx build -t ${params.Tag_docker_image} . --push"
 			}
 		}
 	}
