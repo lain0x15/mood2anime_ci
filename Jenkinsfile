@@ -1,5 +1,5 @@
 pipeline {
-    agent any1
+    agent any
     parameters {
       string(name: 'Dockerhub_secret', defaultValue: 'dockerhub', description: 'Jenkins secret name for auth into dockerhub')
 
