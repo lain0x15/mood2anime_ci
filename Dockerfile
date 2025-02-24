@@ -6,7 +6,7 @@ ENV DJANGO_CSRF_TRUSTED_ORIGINS=""
 
 ENV PYTHONPATH=/mood2anime/pythonPackage
 
-RUN groupadd --gid 10101 mood2anime && useradd --uid 10101 -g mood2anime -M -d /nonexistent -s /bin/bash mood2anime
+RUN groupadd --gid 10101 mood2anime && useradd --uid 10101 -g mood2anime -M -d /nonexistent -s /bin/false mood2anime
 
 COPY --chown=root:mood2anime --chmod=750 ./mood2anime /mood2anime
 
