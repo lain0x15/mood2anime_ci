@@ -4,6 +4,8 @@ ENV DJANGO_DEBUG=True
 
 ENV DJANGO_CSRF_TRUSTED_ORIGINS=""
 
+ENV DJANGO_WEBSITE_DNS_NAME="localhost"
+
 ENV PYTHONPATH=/mood2anime/pythonPackage
 
 RUN groupadd --gid 10101 mood2anime && useradd --uid 10101 -g mood2anime -M -d /nonexistent -s /bin/false mood2anime
