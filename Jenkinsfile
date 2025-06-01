@@ -10,7 +10,7 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
-				sh "git clone https://github.com/lain0x15/mood2anime.git"
+				sh "git clone --depth 1 https://github.com/lain0x15/mood2anime.git"
                 withCredentials([usernamePassword(credentialsId: "${params.Dockerhub_secret}", usernameVariable : 'username_dockerhub', passwordVariable: 'password_dockerhub' )]) {
                       sh 'docker login -u $username_dockerhub --password $password_dockerhub'
                 }
