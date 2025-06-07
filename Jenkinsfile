@@ -2,8 +2,8 @@ pipeline {
     agent any
     parameters {
       string(name: 'Dockerhub_secret', defaultValue: 'dockerhub', description: 'Jenkins secret name for auth into dockerhub')
-      string(name: 'Tag_docker_image', defaultValue: 'max0x15/mood2anime', description: 'Tag for pushing image')
       string(name: 'git_branch', defaultValue: 'main', description: 'branch for git clone')
+      string(name: 'Tag_docker_image', defaultValue: 'max0x15/mood2anime', description: 'Tag for pushing image')
     }
     options {
         disableConcurrentBuilds()
