@@ -17,9 +17,9 @@ COPY --chown=mood2anime:mood2anime --chmod=750 ./mood2anime /mood2anime
 
 WORKDIR /mood2anime
 
-RUN PYTHONPATH=/mood2anime/pythonPackage pip install --target /mood2anime/pythonPackage -r ./requirements.txt
-
 USER mood2anime
+
+RUN PYTHONPATH=/mood2anime/pythonPackage pip install --target /mood2anime/pythonPackage -r ./requirements.txt
 
 EXPOSE 8080
 
